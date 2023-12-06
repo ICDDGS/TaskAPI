@@ -1,0 +1,124 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Access API",
+      "version": "1.0",
+      "description": "API for managing books"
+    },
+    "paths": {
+      "/api/books": {
+        "get": {
+          "summary": "Get a list of books",
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {"type": "string"},
+                    "author": {"type": "string"}
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "Add a new book",
+          "parameters": [
+            {
+              "name": "book",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Book"
+              }
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Book created",
+              "schema": {
+                "$ref": "#/definitions/Book"
+              }
+            }
+          }
+        }
+      },
+      "/api/books/{book_id}": {
+        "get": {
+          "summary": "Get a book by ID",
+          "parameters": [
+            {
+              "name": "book_id",
+              "in": "path",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "$ref": "#/definitions/Book"
+              }
+            }
+          }
+        },
+        "put": {
+          "summary": "Update a book by ID",
+          "parameters": [
+            {
+              "name": "book_id",
+              "in": "path",
+              "required": true,
+              "type": "integer"
+            },
+            {
+              "name": "updated_data",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/Book"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Book updated",
+              "schema": {
+                "$ref": "#/definitions/Book"
+              }
+            }
+          }
+        },
+        "delete": {
+          "summary": "Delete a book by ID",
+          "parameters": [
+            {
+              "name": "book_id",
+              "in": "path",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Book deleted"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Book": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string"},
+          "author": {"type": "string"}
+        }
+      }
+    }
+}  
