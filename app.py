@@ -1,10 +1,9 @@
 from flask import Flask
+from routes.task_routes import task_routes
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return '¡Hello, World!'
+app.register_blueprint(task_routes)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

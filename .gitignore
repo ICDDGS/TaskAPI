@@ -1,0 +1,9 @@
+# local venv
+/venv
+
+env_data.txt
+
+#Logs
+API_Notifications
+
+__pycache__
