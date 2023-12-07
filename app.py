@@ -19,16 +19,16 @@ swagger_ui_blueprint = get_swaggerui_blueprint(
 )
 app.register_blueprint(swagger_ui_blueprint, url_prefix=SWAGGER_URL)
 
-db_connector = BookModel()
+db_connector = TaskModel()
 db_connector.connect_to_database()
 
-book_service = BookService(db_connector)
-book_schema = BookSchema()
+task_service = TaskServices(db_connector)
+task_schema = TaskSchema()
 
-book_blueprint = BookRoutes(book_service, book_schema)
-app.register_blueprint(book_blueprint)
+task_blueprint = TaskRoutes(task_service, task_schema)
+app.register_blueprint(task_blueprint)
 
-CORS(app, resources={r'/api/books': {'origins': 'http://localhost:3000'}})
+CORS(app, resources={r'/api/tasks': {'origins': 'http://localhost:3000'}})
 
 if __name__ == '__main__':
     try:

@@ -2,15 +2,16 @@ import os
 from pymongo import MongoClient
 from logger.logger_base import log
 
+
 class TaskModel:
     def __init__(self):
         self.client = None
         self.db = None
 
     def connect_to_database(self):
-        mongodb_user = os.environ.get('MONGODB_USER')
-        mongodb_pass = os.environ.get('MONGODB_PASS')
-        mongodb_host = os.environ.get('MONGODB_HOST')
+        mongodb_user = "admin"#os.environ.get('MONGODB_USER')
+        mongodb_pass = "pass123"#os.environ.get('MONGODB_PASS')
+        mongodb_host = "localhost"#os.environ.get('MONGODB_HOST')
 
         required_variables = {'MONGODB_USER': mongodb_user, 'MONGODB_PASS': mongodb_pass, 'MONGODB_HOST': mongodb_host}
 
@@ -28,7 +29,7 @@ class TaskModel:
                 authSource='admin',
                 authMechanism='SCRAM-SHA-256'
             )
-            self.db = self.client['microservices']
+            self.db = self.client['Tasks']
         except Exception as e:
             log.critical(f'Failed to connect to the database: {e}')
             raise

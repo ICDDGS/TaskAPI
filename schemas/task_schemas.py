@@ -6,7 +6,7 @@ class TaskSchema:
     Class that defines schema for individual tasks.
     """
     _id = fields.Int(required=True)
-    task = fields.Str(required=True)
+    name = fields.Str(required=True)
     description = fields.Str(required=False)
     due = fields.Str(required=True)
     status = fields.Str(required=True)

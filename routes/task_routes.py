@@ -37,13 +37,13 @@ class TaskRoutes(Blueprint):
             if not self.data:
                 return jsonify({'error': 'Invalid data'}), 400
             
-            self.task = self.data.get('task')
+            self.name = self.data.get('name')
             self.description = self.data.get('description')
             self.date = self.data.get('date')
             self.status = self.data.get('status')
 
             try:
-                self.task_schema.validate_task(self.task)
+                self.task_schema.validate_name(self.name)
                 self.task_schema.validate_description(self.description)
                 self.task_schema.validate_date(self.date)
                 self.task_schema.validate_status(self.status)
@@ -51,7 +51,7 @@ class TaskRoutes(Blueprint):
                  return(jsonify({'error': 'Invalid data', 'details': e.messages}), 400)
             
             self.new_task = {
-                'task': self.task,
+                'name': self.name,
                 'description': self.description,
                 'date':self.date,
                 'status':self.status
@@ -68,20 +68,20 @@ class TaskRoutes(Blueprint):
             if not self.data:
                 return jsonify({'error': 'Invalid data'}), 400
             
-            self.task = self.data.get('task')
+            self.name = self.data.get('name')
             self.description = self.data.get('description')
             self.date = self.data.get('date')
             self.status = self.data.get('status')
 
             try:
-                self.task_schema.validate_task(self.task)
+                self.task_schema.validate_name(self.name)
                 self.task_schema.validate_description(self.description)
                 self.task_schema.validate_date(self.date)
                 self.task_schema.validate_status(self.status)
             except ValidationError as e:
                  return(jsonify({'error': 'Invalid data', 'details': e.messages}), 400)
             
-            self.task_updated = self.book_service.update_task(task_id, self.data)
+            self.task_updated = self.task_service.update_task(task_id, self.data)
 
             if self.task_updated:
                 return jsonify(self.task_updated), 200
@@ -91,7 +91,7 @@ class TaskRoutes(Blueprint):
         except Exception as e:
             log.critical(f'Error updating the task in the database: {e}')
 
-    def delete_book(self, task__id):
+    def delete_task(self, task__id):
         try:
             self.task_updated = self.task_service.delete_task(task__id)
             if self.task_deleted:
