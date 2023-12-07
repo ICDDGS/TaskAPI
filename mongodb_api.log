@@ -80,3 +80,40 @@ TypeError: Object of type Response is not JSON serializable
 02:28:03 AM: WARNING [_internal.py:96]  * Debugger is active!
 02:28:03 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208
 02:28:15 AM: INFO [_internal.py:96] 127.0.0.1 - - [07/Dec/2023 02:28:15] "GET /api/tasks HTTP/1.1" 200 -
+02:59:23 AM: INFO [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+02:59:23 AM: INFO [_internal.py:96] [33mPress CTRL+C to quit[0m
+02:59:23 AM: INFO [_internal.py:96]  * Restarting with stat
+02:59:23 AM: WARNING [_internal.py:96]  * Debugger is active!
+02:59:23 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208
+02:59:30 AM: INFO [_internal.py:96] 127.0.0.1 - - [07/Dec/2023 02:59:30] "GET /api/tasks HTTP/1.1" 200 -
+03:19:39 AM: INFO [_internal.py:96]  * Detected change in '/home/icddgs/Desktop/SistemasDistribuidos/Api/TaskAPI/schemas/task_schemas.py', reloading
+03:19:39 AM: INFO [_internal.py:96]  * Restarting with stat
+03:19:39 AM: WARNING [_internal.py:96]  * Debugger is active!
+03:19:39 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208
+03:19:41 AM: INFO [_internal.py:96]  * Detected change in '/home/icddgs/Desktop/SistemasDistribuidos/Api/TaskAPI/app.py', reloading
+03:19:42 AM: INFO [_internal.py:96]  * Restarting with stat
+03:19:42 AM: WARNING [_internal.py:96]  * Debugger is active!
+03:19:42 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208
+03:20:20 AM: INFO [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+03:20:20 AM: INFO [_internal.py:96] [33mPress CTRL+C to quit[0m
+03:20:20 AM: INFO [_internal.py:96]  * Restarting with stat
+03:20:21 AM: WARNING [_internal.py:96]  * Debugger is active!
+03:20:21 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208
+03:20:30 AM: INFO [_internal.py:96] 127.0.0.1 - - [07/Dec/2023 03:20:30] "GET /api/tasks HTTP/1.1" 200 -
+03:27:14 AM: INFO [_internal.py:96]  * Detected change in '/home/icddgs/Desktop/SistemasDistribuidos/Api/TaskAPI/models/task_models.py', reloading
+03:27:15 AM: INFO [_internal.py:96]  * Restarting with stat
+03:27:15 AM: WARNING [_internal.py:96]  * Debugger is active!
+03:27:15 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208
+03:27:23 AM: INFO [_internal.py:96]  * Detected change in '/home/icddgs/Desktop/SistemasDistribuidos/Api/TaskAPI/models/task_models.py', reloading
+03:27:24 AM: INFO [_internal.py:96]  * Restarting with stat
+03:27:24 AM: WARNING [_internal.py:96]  * Debugger is active!
+03:27:24 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208
+03:27:30 AM: INFO [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+03:27:30 AM: INFO [_internal.py:96] [33mPress CTRL+C to quit[0m
+03:27:30 AM: INFO [_internal.py:96]  * Restarting with stat
+03:27:31 AM: WARNING [_internal.py:96]  * Debugger is active!
+03:27:31 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208
+03:27:45 AM: INFO [_internal.py:96] 127.0.0.1 - - [07/Dec/2023 03:27:45] "GET /api/tasks HTTP/1.1" 200 -

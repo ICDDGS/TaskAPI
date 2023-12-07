@@ -29,7 +29,7 @@ class TaskModel:
                 authSource='admin',
                 authMechanism='SCRAM-SHA-256'
             )
-            self.db = self.client['Tasks']
+            self.db = self.client['TaskManagment']
         except Exception as e:
             log.critical(f'Failed to connect to the database: {e}')
             raise

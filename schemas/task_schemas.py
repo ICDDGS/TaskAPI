@@ -14,7 +14,7 @@ class TaskSchema:
     @validates('due')
     def validate_due(self, value):
         """
-        Validates the duename date format.
+        Validates the due date format.
 
         Args:
             value: The due date string.
@@ -41,3 +41,27 @@ class TaskSchema:
         if value not in ['Complete', 'Pending']:
             raise ValidationError('Status must be Complete or Pending.')
 
+class TaskListSchema:
+    """
+    Class that defines schema for task lists.
+    """
+    _id = fields.Int(required=True)
+    name = fields.Str(required=True)
+    description = fields.Str(required=False)
+    color = fields.Str(required=True)
+    tasks = fields.List(fields.Nested(TaskSchema), allow_none=True, missing=[])
+
+    @validates('color')
+    def validate_color(self, value):
+        """
+        Validates the task list color format.
+
+        Args:
+            value: The color string.
+
+        Raises:
+            ValidationError: If the color is not a valid hexadecimal value with exactly 6 characters.
+        """
+        if not re.match(r'^#[0-9a-fA-F]{6}$', value):
+            raise ValidationError('Color must be a valid hexadecimal value with exactly 6 characters (e.g., #RRGGBB).')
+    
