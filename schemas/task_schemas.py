@@ -6,7 +6,7 @@ class TaskSchema:
     Class that defines schema for individual tasks.
     """
     _id = fields.Int(required=True)
-    name = fields.Str(required=True)
+    task = fields.Str(required=True)
     description = fields.Str(required=False)
     due = fields.Str(required=True)
     status = fields.Str(required=True)
@@ -14,7 +14,7 @@ class TaskSchema:
     @validates('due')
     def validate_due(self, value):
         """
-        Validates the due date format.
+        Validates the duename date format.
 
         Args:
             value: The due date string.
