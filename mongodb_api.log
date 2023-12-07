@@ -117,3 +117,14 @@ TypeError: Object of type Response is not JSON serializable
 03:27:31 AM: WARNING [_internal.py:96]  * Debugger is active!
 03:27:31 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208
 03:27:45 AM: INFO [_internal.py:96] 127.0.0.1 - - [07/Dec/2023 03:27:45] "GET /api/tasks HTTP/1.1" 200 -
+03:32:12 AM: INFO [_internal.py:96] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+03:32:12 AM: INFO [_internal.py:96] [33mPress CTRL+C to quit[0m
+03:32:12 AM: INFO [_internal.py:96]  * Restarting with stat
+03:32:12 AM: WARNING [_internal.py:96]  * Debugger is active!
+03:32:12 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208
+03:32:27 AM: INFO [_internal.py:96] 127.0.0.1 - - [07/Dec/2023 03:32:27] "GET /api/tasks HTTP/1.1" 200 -
+03:35:54 AM: INFO [_internal.py:96]  * Detected change in '/home/icddgs/Desktop/SistemasDistribuidos/Api/TaskAPI/services/task_services.py', reloading
+03:35:54 AM: INFO [_internal.py:96]  * Restarting with stat
+03:35:55 AM: WARNING [_internal.py:96]  * Debugger is active!
+03:35:55 AM: INFO [_internal.py:96]  * Debugger PIN: 462-129-208

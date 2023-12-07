@@ -15,7 +15,7 @@ class TaskServices:
         
     def get_task_by_id(self, task_id):
         try:
-            self.task = self.db_connector.db.books.find_one({'_id': task_id})
+            self.task = self.db_connector.db.tasks.find_one({'_id': task_id})
             return self.task
         except Exception as e:
             log.critical(f'Error fetching the task id from the database: {e}')
@@ -26,7 +26,7 @@ class TaskServices:
             self.max_id = self.db_connector.db.tasks.find_one(sort=[('_id', -1)])['_id'] if self.db_connector.db.tasks.count_documents({}) > 0 else 0
             self.new_id = self.max_id + 1
             new_task['_id'] = self.new_id
-            self.db_connector.db.books.insert_one(new_task)
+            self.db_connector.db.tasks.insert_one(new_task)
             return new_task
         except Exception as e:
             log.critical(f'Error creating the new task: {e}')
